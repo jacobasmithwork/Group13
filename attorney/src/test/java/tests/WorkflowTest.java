@@ -77,4 +77,32 @@ public class WorkflowTest{
         
     }
 
+    @Test
+    public void testSendReviewQueue(){
+        AttorneyForm A = new AttorneyForm("Mark Douglas", "4602 Chain Bridge Rd", "Violet Drake", "Cool Guy Firm", 904, 7266028841L, 9541);
+       
+        int id = A.sendToDb();
+        Workflow.sendToReview(id);
+
+
+        int testid = Workflow.getNextReview().getFormId();
+
+        assertEquals(("GetReviewQueue Error: mismatching formId: " + testid +" : "+ id), testid, id);
+        
+    }
+
+    @Test
+    public void testSendApprovalQueue(){
+        AttorneyForm A = new AttorneyForm("Mark Douglas", "4602 Chain Bridge Rd", "Violet Drake", "Cool Guy Firm", 904, 7266028841L, 9541);
+       
+        int id = A.sendToDb();
+        Workflow.sendToApprove(id);
+
+
+        int testid = Workflow.getNextApproval().getFormId();
+
+        assertEquals(("GetReviewQueue Error: mismatching formId: " + testid +" : "+ id), testid, id);
+        
+    }
+
 }

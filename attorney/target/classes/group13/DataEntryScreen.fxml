@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group13.DataEntryController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TextField fx:id="immName" layoutX="46.0" layoutY="56.0" prefHeight="26.0" prefWidth="204.0" promptText="John Doe" />
+            <Text fx:id="immNameLabel" layoutX="46.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant Name" />
+            <TextField fx:id="immAddress" layoutX="284.0" layoutY="56.0" prefHeight="26.0" prefWidth="314.0" promptText="1234 Main Street, Fairfax VA 23020" />
+            <Text fx:id="immAddressLabel" layoutX="284.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant Address" />
+            <TextField fx:id="attName" layoutX="46.0" layoutY="231.0" prefHeight="26.0" prefWidth="204.0" promptText="John Doe" />
+            <Text fx:id="attNameLabel" layoutX="46.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attorney Name" />
+            <TextField fx:id="immID" layoutX="46.0" layoutY="123.0" prefHeight="26.0" prefWidth="204.0" promptText="482738264" />
+            <Text fx:id="immIDLabel" layoutX="46.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant Immigrant ID" />
+            <Separator layoutX="-1.0" layoutY="175.0" prefHeight="8.0" prefWidth="646.0" />
+            <Text fx:id="appInfo" layoutX="46.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant Information" underline="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="attInfo" layoutX="46.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attorney Information" underline="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="attFirm" layoutX="284.0" layoutY="231.0" prefHeight="26.0" prefWidth="314.0" promptText="Marks and Harrison" />
+            <Text fx:id="attFirmLabel" layoutX="284.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attorney Firm" />
+            <TextField fx:id="attPhoneNum" layoutX="45.0" layoutY="299.0" prefHeight="26.0" prefWidth="204.0" promptText="803-900-2322" />
+            <Text fx:id="attPhoneNumLabel" layoutX="45.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attorney Phone Number" />
+            <ProgressIndicator fx:id="progressCircle" layoutX="605.0" layoutY="345.0" progress="0.0" />
+            <Button fx:id="submitButton" layoutX="385.0" layoutY="312.0" mnemonicParsing="false" onAction="#attemptSubmit" prefHeight="66.0" prefWidth="204.0" text="Submit Request">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Text id="NameError" fx:id="immNameError" fill="RED" layoutX="46.0" layoutY="95.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Error with Name" wrappingWidth="204.0" />
+            <Text id="IDError" fx:id="immIDError" fill="RED" layoutX="46.0" layoutY="162.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Error with ID" wrappingWidth="204.0" />
+            <Text id="PhoneNumError" fx:id="attPhoneNumError" fill="RED" layoutX="45.0" layoutY="338.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Error with Phone Number" wrappingWidth="333.0" />
+            <Text id="AddressError" fx:id="immAddressError" fill="RED" layoutX="284.0" layoutY="95.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Error with Address" wrappingWidth="314.39999999999986" />
+            <Text id="AttNameError" fx:id="attNameError" fill="RED" layoutX="45.0" layoutY="270.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Error with Name" wrappingWidth="204.0" />
+            <Text id="AttFirmError" fx:id="attFirmError" fill="RED" layoutX="283.0" layoutY="270.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Error with Firm" wrappingWidth="314.39999999999986" />
+            <MenuButton id="LanguageMenu" fx:id="languageSelector" layoutX="24.0" layoutY="352.0" mnemonicParsing="false" popupSide="TOP" text="English">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#makeEnglish" text="English" />
+                <MenuItem mnemonicParsing="false" onAction="#makeSpanish" text="Español" />
+                <MenuItem mnemonicParsing="false" onAction="#makeFrench" text="Français" />
+                <MenuItem mnemonicParsing="false" onAction="#makeChinese" text="中国人" />
+                <MenuItem mnemonicParsing="false" onAction="#makeHindi" text="हिंदी" />
+              </items>
+            </MenuButton>
+            <Hyperlink fx:id="reportProblem" layoutX="108.0" layoutY="352.0" prefHeight="26.0" prefWidth="154.0" text="Report Problem" onAction="#openReport">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Hyperlink>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

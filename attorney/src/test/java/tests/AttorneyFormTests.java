@@ -1,6 +1,9 @@
 package tests;
 
 import static org.junit.Assert.*;
+
+import java.util.HashMap;
+
 import org.junit.*;
 
 import group13.AttorneyForm;
@@ -82,5 +85,13 @@ public class AttorneyFormTests {
         // Once DB implemented, replace 'false' with DB.getForm(id).getPhoneNum ==
         // 8039002322L
         assertTrue("Did not add to database", AttorneyForm.getForm(af.getFormId()).getPhoneNum() == 8039002322L);
+    }
+
+    @Test
+    public void testPurgeDb(){
+        af.sendToDb();
+        AttorneyForm.purgeDb();
+        HashMap<Integer, AttorneyForm> database = AttorneyForm.getDatabase();
+        assertEquals("Purge failed.", 0, database.size());
     }
 }
