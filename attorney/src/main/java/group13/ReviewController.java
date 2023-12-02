@@ -2,6 +2,7 @@ package group13;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -79,16 +80,16 @@ public class ReviewController{
         }
     }
 
-
     @FXML
     public void btnSubmit(ActionEvent event){
-        if((comment.getText() != null)){
+
+        if(comment.getText() != null){
             ArrayList<String> notes = new ArrayList<>(Arrays.asList(comment.getText()));
             form.setComments(notes);
         }
 
         form.sendToWf(2);
+        form = null;
         System.out.println("Review Submitted");
     }
-
 }
