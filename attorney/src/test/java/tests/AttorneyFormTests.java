@@ -91,7 +91,11 @@ public class AttorneyFormTests {
     public void testPurgeDb(){
         af.sendToDb();
         AttorneyForm.purgeDb();
+<<<<<<< HEAD
         HashMap<Integer, AttorneyForm> database = AttorneyForm.getDatabase();
         assertEquals("Purge failed.", 0, database.size());
+=======
+        assertTrue("Did not purge database", AttorneyForm.getDatabase().size() == 0);
+>>>>>>> 8d2649e3ab2a40d5dcf7f9ae287cd16b0cc15ed1
     }
 }
