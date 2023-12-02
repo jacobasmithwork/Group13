@@ -48,13 +48,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <!-- Specify the main resource directory -->
-                <directory>attorney/src\main\java\group13\resources</directory>
-            </resource>
-            <!-- You can include multiple resource elements if needed -->
-        </resources>
     </build>
 
 

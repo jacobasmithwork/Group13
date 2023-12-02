@@ -28,6 +28,7 @@ public class DataEntry extends Application{
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
 
+            // loader.setLocation(this.getClass().getResource("DataEntryScreen.fxml"));
             loader.setLocation(this.getClass().getResource("DataEntryScreen.fxml"));
 
             Parent parent = loader.load();
